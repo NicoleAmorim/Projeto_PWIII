@@ -5,9 +5,10 @@ class Login extends CI_Controller {
 
 	public function ValidarLogin()
 	{
-        $usuario = $this->input->post("user");
+        
+        $user = $this->input->post("user");
         //user é o name do input da view
-        $usuario = $this->input->post("pass");
+        $pass = $this->input->post("pass");
         //pass é o name do input da view
 
         if(empty($user)){
@@ -16,10 +17,11 @@ class Login extends CI_Controller {
         }
         if(empty($pass)){
             echo "ErroPass";
-            exit();
+            die();
         }
         else{
             echo "Sucesso";
+            exit();
         }
 
     }

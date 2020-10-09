@@ -39,9 +39,8 @@ $(function(){
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Login realizado!',
                         showConfirmButton: true,
-                        timer: 1500
                       }).then((result) => {
                         if (result.value)
                          {
@@ -160,9 +159,8 @@ $(function(){
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Cadastro Realizado!',
                         showConfirmButton: true,
-                        timer: 1500
                       }).then((result) => {
                         if (result.value)
                          {
