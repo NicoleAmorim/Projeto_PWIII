@@ -1,5 +1,6 @@
+DROP DATABASE IF EXISTS Projeto_PWIII;
 
-CREATE DATABASE Projeto_PWIII;
+CREATE DATABASE IF NOT EXISTS Projeto_PWIII;
 
 USE Projeto_PWIII;
 
@@ -16,13 +17,14 @@ CREATE TABLE Usuario(
 
 CREATE TABLE Produto(
 idProduto INT PRIMARY KEY AUTO_INCREMENT,
+nomeProduto VARCHAR(100) NOT NULL,
+nomeFornecedor VARCHAR(100) NOT NULL,
 codBarras VARCHAR(13) NOT NULL UNIQUE,
-nome VARCHAR(100) NOT NULL,
-descricao VARCHAR(200) NOT NULL,
-preco DOUBLE NOT NULL,
+codProduto VARCHAR(13) NOT NULL UNIQUE,
 estoque INT NOT NULL,
-ativo VARCHAR(10) NOT NULL,
-foto VARCHAR(100) NULL
+quantidade INT NOT NULL,
+preco DOUBLE NOT NULL,
+descricao VARCHAR(200) NOT NULL
 );
 
 INSERT INTO Usuario(idUsuario, nome, email, userName, senha, tipo, ativo, cpf) VALUES ("1", "Bruna", "bruna@gmail.com", "bruna", "123", "cliente", true, "00000000000");

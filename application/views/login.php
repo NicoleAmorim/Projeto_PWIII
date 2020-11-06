@@ -3,106 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olympéa</title>
-    <link href="<?php echo base_url('assets/css-padrao/css-padrao.css');?>" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css-custom/main.css');?>" />
+    <title>Camelô</title>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css-custom/style.css');?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/material-icon/css/material-design-iconic-font.min.css');?>">
     <style>
         body{
-            background-image: url(<?php echo base_url('assets/imagens/fumaca.jpg');?>);
+            background-image: url(<?php echo base_url('assets/imagens/black2.jpg');?>);
             background-repeat: no-repeat;
             background-size: cover;
-        }
-        h1, h2, small, a, label, button, input {
-	        font-family: Industry, monospace;
-            color: white;
-        }
-        .borda{
-            border-top: 50px;
-            border-radius: 25px !important;
-            border-width: 5px !important;
-            border-style: solid !important;
-            border-color: #2dd9d0 !important;
-            width: 90%; 
-            padding-top: 1%;
-            margin: 0px auto;
-            float: none;
-            background-color: rgb(245,245,245,0.15);
         }
     </style>
 </head>
 <body>
-		<!-- Header -->
-        <header id="header" class="alt">
-				<div class="logo"><a href="<?php echo base_url('index.php/Welcome/index')?>">Olympéa</a></div>
-				<a href="#menu">Menu</a>
-			</header>
 
-        <!-- Nav -->
-			<nav id="menu" style="background-color: #2dd9d0;">
-				<ul class="links">
-					<li><a href="<?php echo base_url('index.php/Welcome/index')?>">Home</a></li>
-					<li><a href="<?php echo base_url('index.php/Welcome/TelaLogin')?>">Logar</a></li>
-					<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastro')?>">Cadastrar</a></li>
-				</ul>
-			</nav>
-            <br><br>
-    <!--Login-->
-    <div class="container row my-5 mx-auto borda ">
-    <div class="col-lg-6 text-center ">
-        <h1 class="display-5">Já sou usuário da Olympéa</h1>
-            <small id="emailHelp" class="form-text text-muted ">Insira o seu e-mail e a sua senha para se identificar.</small>
-            <form  action="<?php  echo base_url('index.php/Login/ValidarLogin')?>" method="POST" id="login">
-                <div class="form-row">
-                    <div class="col-md-9 my-1 mx-auto">        
-                        <label class="form-text text-muted text-justify distancia5" for="User">Email</label>
-                    </div>    
-                </div>
-                <div class="form-row">
-                    <div class="col-lg-9 my-1 mx-auto"> 
-                        <input class="form-control form-control-lg" id="user" name="user" type="text" placeholder="Digite seu e-mail" name="user">
+<!-- Sing in  Form -->
+<section class="sign-in">
+    <div class="container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="<?php echo base_url('assets/imagens/acessorios.jpg');?>"></figure>
+                <a href="#" class="signup-image-link">Create an account</a>
+            </div>
+
+            <div class="signin-form">
+                <h2 class="form-title">Sign up</h2>
+                <form class="register-form" action="<?php  echo base_url('index.php/Login/ValidarLogin')?>" method="POST" id="login">
+                    <div class="form-group">
+                        <label for="User"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="user" id="user" placeholder="Usuário ou Email"/>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-lg-9 my-1 mx-auto">
-                        <label class="form-text text-muted text-justify" for="Pass">Senha</label>
-                    </div>    
-                </div>
-                    <div class="form-row">
-                        <div class="col-lg-9 my-1 mx-auto">
-                            <input class="form-control form-control-lg" id="pass" name="pass" type="password" placeholder="Digite sua senha" name="pass">
-                        </div>
+                    <div class="form-group">
+                        <label for="Pass"><i class="zmdi zmdi-lock"></i></label>
+                        <input type="password" name="pass" id="pass" placeholder="Senha"/>
                     </div>
-                    <div class="form-row">
-                        <div class="my-5 mx-auto col-lg-6">
-                            <input class="form-control col-6 btn" style="background-color: #2dd9d0;" type="submit" value="Acessar">
-                        </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                        <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                     </div>
-            </form>
-            <div class="form-row">
-                <div class="col-lg-5 ml-auto text-center">
-                    <a class="nav-link"> </a>
+                    <div class="form-group form-button">
+                        <input class="form-control col-6 btn form-submit" style="background-color: #465902;" type="submit" value="Acessar"/>
+                    </div>
+                </form>
+                <div class="social-login">
+                    <span class="social-label">Or login with</span>
+                    <ul class="socials">
+                        <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                        <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                        <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    <!--Fim Login-->
-    <!--Cadastro-->
-    <div class="col-lg-6 text-center">
-        <h1 class="display-5">Cadastre-se</h1>
-        <form  method="POST">
-            <small id="emailHelp" class="form-text text-muted distancia6">Se ainda não tem uma conta de usuário da Olympéa, utilize esta opção para acessar o formulário de registro.</small>
-            <div class="form-row">
-                <div class="my-5 mx-auto col-lg-6">
-                <a class="form-control col-6 btn" style="background-color: #2dd9d0;" href="index.html" role="button">Cadastrar</a>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-lg-5 ml-auto text-center">
-                    <a class="nav-link"></a>
-                </div>
-            </div>
-        </form>
     </div>
-    <!--Fim Cadastro-->
+</section>
+
 
     <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.js');?>"></script>
     <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.scrollex.min.js');?>"></script>

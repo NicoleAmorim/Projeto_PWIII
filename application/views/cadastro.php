@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olympéa</title>
-	<link href="<?php echo base_url('assets/css-padrao/css-padrao.css');?>" rel="stylesheet">
-	<link href="<?php echo base_url('assets/css-padrao/cadastro.css');?>" rel="stylesheet">
+    <title>Camelô</title>
 	<link rel="stylesheet" href="<?php echo base_url('assets/css-custom/main.css');?>" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/material-icon/css/material-design-iconic-font.min.css');?>">
     <style>
+        body{
+            background-image: url(<?php echo base_url('assets/imagens/black2.jpg');?>);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         .module_top, .module_bottom{
             visibility: hidden;
         }
@@ -26,71 +29,78 @@
 <body>
     <!-- Header -->
     <header id="header" class="alt">
-		<div class="logo"><a href="<?php echo base_url('index.php/Welcome/index')?>">Olympéa</a></div>
+		<div class="logo"><a href="<?php echo base_url('index.php/Welcome/index')?>">Camelô</a></div>
 		<a href="#menu">Menu</a>
 	</header>
 
     <!-- Nav -->
-	<nav id="menu" style="background-color: #2dd9d0;">
+	<nav id="menu" style="background-color: #465902;">
 		<ul class="links">
-			<li><a href="<?php echo base_url('index.php/Welcome/index')?>">Home</a></li>
-			<li><a href="<?php echo base_url('index.php/Welcome/TelaLogin')?>">Logar</a></li>
+        <li><a href="<?php echo base_url('index.php/Welcome/index')?>">Sair</a></li>
+            <li><a href="<?php echo base_url('index.php/Welcome/TelaPerfil')?>">Meu Perfil</a></li>
 			<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastro')?>">Cadastrar</a></li>
+			<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastroProdutos')?>">Cadastrar um novo Produto</a></li>
+            <li><a href="<?php echo base_url('index.php/Welcome/TelaRelatorioProdutos')?>">Relatório de Produtos</a></li>	
+            <li><a href="<?php echo base_url('index.php/Welcome/TelaRelatorioVendas')?>">Relatório de Vendas</a></li>
+			<li><a href="<?php echo base_url('index.php/Welcome/TelaCodAlterarProduto')?>">Alterar ou Excluir produto</a></li>
 		</ul>
     </nav>
     <!--Form Cadastro-->
-    <form class="newsletter-form" action="<?php  echo base_url('index.php/ValidarCadastros/ValidarCadastro')?>" method="POST" id="cadastro">
-        <div class="newsletter-form-lightbox">
-            <div class="newsletter-form-heading">Inscreva-se</div>
-    <!-- Dados pessoais -->
-    <div class="newsletter-form-row">
-      <div class="newsletter-form-columns">
-        <div class="newsletter-form-columns__item">
-          <div class="newsletter-form-item">
-            <input id="nome" name="nome" type="text" class="newsletter-form-item__input" aria-labelledby="nome">
-            <label for="Name" class="newsletter-form-item__label">Nome Completo*</label>
-          </div>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css-custom/style2.css');?>" />
+    <div class="main">
+    <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="<?php echo base_url('assets/imagens/ft2.jpg');?>" alt="">
+                    <div class="signup-img-content">
+                        <h2>Cadastrar</h2>
+                        <p>um novo funcionário</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form class="register-form"action="<?php  echo base_url('index.php/ValidarCadastros/ValidarCadastro')?>" method="POST" id="cadastro">
+                    <center>    
+                        <br><br><br><br>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="Name" class="required">Nome Completo</label>
+                                    <input type="text" name="nome" id="nome" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Email" class="required">Email Válido</label>
+                                    <input type="text" name="email" id="email" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Senha" class="required">Senha</label>
+                                    <input type="password" name="senha" id="senha" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                               <div class="form-input">
+                                    <label for="User" class="required">Nome de Usuário</label>
+                                    <input type="text" name="userName" id="userName" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Cpf" class="required">CPF</label>
+                                    <input type="text" name="cpf" id="cpf" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="ConfSenha" class="required">Confirmar Senha</label>
+                                    <input type="text" name="confSenha" id="confSenha" />
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div>
+                            <input class="submit" type="submit" value="Cadastrar" name="cadastro" id="Cadastro"/>
+                        </div>
+                    </center>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="newsletter-form-columns__item">
-          <div class="newsletter-form-item">
-            <input id="userName" name="userName" type="text" class="newsletter-form-item__input" aria-labelledby="userName">
-            <label for="User" class="newsletter-form-item__label">Nome de usuário*</label>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="newsletter-form-row">
-      <div class="newsletter-form-item">
-        <input id="email" name="email" type="text" class="newsletter-form-item__input" aria-labelledby="email" >
-        <label for="Email" class="newsletter-form-item__label">Email válido*</label>
-      </div>
-    </div>
-    <div class="newsletter-form-row">
-      <div class="newsletter-form-item">
-        <input id="cpf" name="cpf" type="text" class="newsletter-form-item__input" aria-labelledby="cpf" >
-        <label for="Cpf" class="newsletter-form-item__label">CPF*</label>
-      </div>
-	</div>
-    <div class="newsletter-form-row">
-      <div class="newsletter-form-columns">
-        <div class="newsletter-form-columns__item">
-          <div class="newsletter-form-item">
-            <input id="senha" name="senha" type="password" class="newsletter-form-item__input" aria-labelledby="senha" >
-            <label for="Senha" class="newsletter-form-item__label">Senha*</label>
-          </div>
-        </div>
-        <div class="newsletter-form-columns__item">
-          <div class="newsletter-form-item">
-            <input id="confSenha" name="confSenha" type="password" class="newsletter-form-item__input" aria-labelledby="confSenha" >
-            <label for="ConfSenha" class="newsletter-form-item__label">Confirmar senha*</label>
-          </div>
-        </div>
-      </div>
-    </div>
-	<input class="newsletter-form-submit" type="submit" value="Cadastrar" name="cadastro" id="Cadastro">
-    </div>
-  </div>
-</form>
     
 
     <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.js');?>"></script>
@@ -103,3 +113,6 @@
     <script src="<?php echo base_url('assets/node_modules/bootstrap/dist/js/bootstrap.js');?>"></script>
     <script src="<?php echo base_url('assets/node_modules/sweetalert2/dist/sweetalert2.all.js');?>"></script>
     <script src="<?php echo base_url('assets/javascript/validacoes.js');?>"></script>
+
+</body>
+</html>

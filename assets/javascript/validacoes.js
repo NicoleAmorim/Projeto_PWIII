@@ -1,3 +1,4 @@
+/*Login*/ 
 $(function(){
     $('#login').submit(function(){
         var obj = this;
@@ -44,7 +45,7 @@ $(function(){
                       }).then((result) => {
                         if (result.value)
                          {
-                            window.location.replace("index");
+                            window.location.replace("TelaRelatorioProdutos");
                         }
                     })
                 }
@@ -54,6 +55,7 @@ $(function(){
     });//function de dentro
 });//function de fora
 
+/*Cadastro*/ 
 $(function(){
     $('#cadastro').submit(function(){
         var obj = this;
@@ -164,7 +166,7 @@ $(function(){
                       }).then((result) => {
                         if (result.value)
                          {
-                            window.location.replace("TelaLogin");
+                            window.location.replace("index");
                         }
                     })
                 }
@@ -174,8 +176,9 @@ $(function(){
     });//function de dentro
 });//function de fora
 
-/*$(function(){
-    $('#produto').submit(function(){
+/*Cadastro de Produto*/ 
+$(function(){
+    $('#cadastroProduto').submit(function(){
         var obj = this;
         var form = $(obj);
         var dados = new FormData(obj);
@@ -187,14 +190,38 @@ $(function(){
             cache: false,
             contentType: false,
             success: function(data){
-                if(data == "ErroNome"){
+                if(data == "ErroNomeProduto"){
                     Swal.fire({
                         title: 'Erro ao preencher campos!',
-                        text: 'Campo Nome vazio!',
+                        text: 'Campo Nome do Produto vazio!',
                         icon: 'error',
                         confirmButtonText: 'Okay, vou refazer!'
                     });
                 }
+                if(data == "ErroNomeFornecedor"){
+                    Swal.fire({
+                        title: 'Erro ao preencher campos!',
+                        text: 'Campo Nome do Fornecedor vazio!',
+                        icon: 'error',
+                        confirmButtonText: 'Okay, vou refazer!'
+                    });
+                }
+                if(data == "ErroCodBarras"){
+                    Swal.fire({
+                        title: 'Erro ao preencher campos!',
+                        text: 'Campo Código de Barros vazio!',
+                        icon: 'error',
+                        confirmButtonText: 'Okay, vou refazer!'
+                    });
+                }    
+                if(data == "ErroCodProduto"){
+                    Swal.fire({
+                        title: 'Erro ao preencher campos!',
+                        text: 'Campo Código de Produto vazio!',
+                        icon: 'error',
+                        confirmButtonText: 'Okay, vou refazer!'
+                    });
+                }    
                 if(data == "ErroEstoque"){
                     Swal.fire({
                         title: 'Erro ao preencher campos!',
@@ -203,6 +230,14 @@ $(function(){
                         confirmButtonText: 'Okay, vou refazer!'
                     });
                 }
+                if(data == "ErroQuantidade"){
+                    Swal.fire({
+                        title: 'Erro ao preencher campos!',
+                        text: 'Campo Quantidade vazio!',
+                        icon: 'error',
+                        confirmButtonText: 'Okay, vou refazer!'
+                    });
+                }    
                 if(data == "ErroPreco")
                 {
                     Swal.fire({
@@ -220,34 +255,94 @@ $(function(){
                         confirmButtonText: 'Okay, vou refazer!'
                     });
                 }
-                if(data == "ErroCodigo"){
+                if(data == "ErroCodBarrasExiste"){
                     Swal.fire({
                         title: 'Erro ao preencher campos!',
-                        text: 'Campo Código de Barros vazio!',
+                        text: 'Código de Barras já cadastrado!',
                         icon: 'error',
                         confirmButtonText: 'Okay, vou refazer!'
                     });
                 }    
-                if(data == "ErroCodigoRegistrado"){
+                if(data == "ErroCadastroProduto"){
                     Swal.fire({
-                        title: 'Erro ao preencher campos!',
-                        text: 'Código de Barros já cadastrado!',
+                        title: 'Erro ao cadastrar o produto!',
+                        text: 'Não foi possivel efetuar o cadastro deste produto!',
                         icon: 'error',
                         confirmButtonText: 'Okay, vou refazer!'
                     });
-                }    
-                if(data == "sucess")
-                {
+                }
+                if(data == "Sucesso"){
                     Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Your work has been saved',
-                    timer: 1500
-                  })
-                  
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Cadastro Realizado!',
+                        showConfirmButton: true,
+                      }).then((result) => {
+                        if (result.value)
+                         {
+                            window.location.replace("TelaRelatorioProdutos");
+                        }
+                    })
                 }
             },
         });
         return false;
     });
-});*/
+});
+
+/*Código Alterar Produto*/ 
+$(function(){
+    $('#codAlterarProduto').submit(function(){
+        var obj = this;
+        var form = $(obj);
+        var dados = new FormData(obj);
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            data: dados,
+            processData: false,
+            cache: false,
+            contentType: false,
+            success: function(data){
+                if(data == "ErroCodProduto"){
+                    Swal.fire({
+                        title: 'Erro ao preencher campos!',
+                        text: 'Campo Código de Produto vazio!',
+                        icon: 'error',
+                        confirmButtonText: 'Okay, vou refazer!'
+                    });
+                }        
+                if(data == "ErroCodProdutoNaoExiste"){
+                    Swal.fire({
+                        title: 'Erro ao preencher campos!',
+                        text: 'Código de Produto não existe!',
+                        icon: 'error',
+                        confirmButtonText: 'Okay, vou refazer!'
+                    });
+                }    
+                if(data == "ErroCodAlterarProduto"){
+                    Swal.fire({
+                        title: 'Erro ao cadastrar o produto!',
+                        text: 'Não foi possivel localizar as informações desse pproduto!',
+                        icon: 'error',
+                        confirmButtonText: 'Okay, vou refazer!'
+                    });
+                }
+                if(data == "Sucesso"){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Cadastro Realizado!',
+                        showConfirmButton: true,
+                      }).then((result) => {
+                        if (result.value)
+                         {
+                            window.location.replace("TelaAlterarExcluirProdutos");
+                        }
+                    })
+                }
+            },
+        });
+        return false;
+    });
+});

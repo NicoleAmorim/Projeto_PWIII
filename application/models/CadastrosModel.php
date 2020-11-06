@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class CadastrosModel extends CI_Model {
 
+    /*Cadastro de Usuario*/
     public function CadastrarUsuario($dados)
     {
         return $this->db->insert('Usuario', $dados);
@@ -25,5 +26,26 @@ class CadastrosModel extends CI_Model {
         $resultado = $this->db->get("Usuario")->row_array();
         return $resultado;
     }
+
+    /* Cadastro de Produto*/
+    public function CadastrarProduto($dados)
+    {
+        return $this->db->insert('Produto', $dados);
+    }
+    public function VerificarCodBarras($codBarras)
+    {
+        $this->db->where('codBarras', $codBarras);
+        $resultado = $this->db->get("Produto")->row_array();
+        return $resultado;
+    }
+
+    /* Codigo Alterar Produto*/
+    public function VerificarCodProduto($codProduto)
+    {
+        $this->db->where('codProduto', $codProduto);
+        $resultado = $this->db->get("Produto")->row_array();
+        return $resultado;
+    }
+
 }
 ?>

@@ -20,14 +20,34 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('home');
-	}
-	public function TelaLogin()
-	{
 		$this->load->view('login');
+	}
+	public function TelaPerfil()
+	{
+		$this->load->view('perfil');
 	}
 	public function TelaCadastro()
 	{
 		$this->load->view('cadastro');
+	}
+	public function TelaCadastroProdutos()
+	{
+		$this->load->view('cadastroProdutos');
+	}
+	public function TelaRelatorioProdutos()
+	{
+		$this->load->view('relatorioProdutos');
+	}
+	public function TelaRelatorioVendas()
+	{
+		$this->load->view('relatorioVendas');
+	}
+	public function TelaCodAlterarProduto()
+	{
+		$this->load->view('codAlterarProduto');
+	}
+	public function TelaAlterarExcluirProdutos()
+	{
+		$this->load->view('alterarExcluirProdutos');
 	}
 }

@@ -1629,7 +1629,7 @@
 		}
 
 	body {
-		background-color: #2dd9d0 ;
+		background-color: #465902 ;
 		color: #444;
 	}
 
@@ -1679,7 +1679,7 @@
 				left: 0;
 				width: 50%;
 				height: 1px;
-				background-color:#2dd9d0;
+				background-color:#465902;
 			}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -1778,7 +1778,7 @@
 	}
 
 	input, select, textarea {
-		color: #2dd9d0;
+		color: #465902;
 	}
 
 	a {
@@ -1844,7 +1844,7 @@
 				left: 0;
 				width: 50%;
 				height: 1px;
-				background-color: #2dd9d0;
+				background-color: #465902;
 			}
 
 		.box .content {
@@ -1980,7 +1980,7 @@
 	input[type="button"],
 	button,
 	.button {
-		background-color: #2dd9d0;
+		background-color: #465902;
 		color: #000 !important;
 	}
 
@@ -2907,7 +2907,7 @@
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #2dd9d0;
+				color: #465902;
 			}
 
 			.wrapper.style2 blockquote {
@@ -2932,8 +2932,8 @@
 			.wrapper.style2 input[type="button"],
 			.wrapper.style2 button,
 			.wrapper.style2 .button {
-				background-color: #008C9E;
-				color: #008C9E!important;
+				background-color: #0D3900;
+				color: #0D3900!important;
 			}
 
 				.wrapper.style2 input[type="submit"].alt,
@@ -2942,7 +2942,7 @@
 				.wrapper.style2 button.alt,
 				.wrapper.style2 .button.alt {
 					background-color: transparent;
-					box-shadow: inset 0 0 0 2px #2dd9d0;
+					box-shadow: inset 0 0 0 2px #465902;
 					color: #000 !important;
 				}
 
@@ -3108,19 +3108,19 @@
 		}
 
 			.wrapper.style3 input, .wrapper.style3 select, .wrapper.style3 textarea {
-				color: #2dd9d0;
+				color: #465902;
 			}
 
 			.wrapper.style3 a {
-				color: #2dd9d0;
+				color: #465902;
 			}
 
 			.wrapper.style3 strong, .wrapper.style3 b {
-				color: #2dd9d0;
+				color: #465902;
 			}
 
 			.wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 h4, .wrapper.style3 h5, .wrapper.style3 h6 {
-				color: #2dd9d0;
+				color: #465902;
 			}
 
 			.wrapper.style3 blockquote {
@@ -3204,7 +3204,7 @@
 				.wrapper.style3 input[type="button"].special,
 				.wrapper.style3 button.special,
 				.wrapper.style3 .button.special {
-					background-color: #2dd9d0;
+					background-color: #465902;
 					color: #ffffff !important;
 				}
 
@@ -3213,7 +3213,7 @@
 					.wrapper.style3 input[type="button"].special:hover,
 					.wrapper.style3 button.special:hover,
 					.wrapper.style3 .button.special:hover {
-						background-color:#2dd9d0;
+						background-color:#465902;
 					}
 
 					.wrapper.style3 input[type="submit"].special:active,
@@ -3221,7 +3221,7 @@
 					.wrapper.style3 input[type="button"].special:active,
 					.wrapper.style3 button.special:active,
 					.wrapper.style3 .button.special:active {
-						background-color: #2dd9d0;
+						background-color: #465902;
 					}
 
 			.wrapper.style3 label {
@@ -3242,8 +3242,8 @@
 				.wrapper.style3 input[type="email"]:focus,
 				.wrapper.style3 select:focus,
 				.wrapper.style3 textarea:focus {
-					border-color: #2dd9d0;
-					box-shadow: 0 0 0 1px #2dd9d0;
+					border-color: #465902;
+					box-shadow: 0 0 0 1px #465902;
 				}
 
 			.wrapper.style3 .select-wrapper:before {
@@ -3265,7 +3265,7 @@
 			.wrapper.style3 input[type="radio"]:checked + label:before {
 				background-color: #8a4680;
 				border-color: #8a4680;
-				color:#2dd9d0;
+				color:#465902;
 			}
 
 			.wrapper.style3 input[type="checkbox"]:focus + label:before,
@@ -3299,7 +3299,7 @@
 			}
 
 			.wrapper.style3 header p {
-				color: #2dd9d0;
+				color: #465902;
 			}
 
 			.wrapper.style3 table tbody tr {
@@ -3349,7 +3349,7 @@
 					left: 0;
 					width: 50%;
 					height: 1px;
-					background-color: #2dd9d0;
+					background-color: #465902;
 				}
 
 			.wrapper.style3:before {
@@ -3938,7 +3938,7 @@
 			transition: color 0.2s ease-in-out;
 			-webkit-tap-highlight-color: transparent;
 			border: 0;
-			color: #2dd9d0;
+			color: #465902;
 			cursor: pointer;
 			display: block;
 			height: 3.25rem;
@@ -3999,26 +3999,26 @@
 /* Banner */
 
 	.banner {
-		background-color: #2dd9d0;;
-		color: #2dd9d0;
+		background-color: #465902;;
+		color: #465902;
 		padding: 8em 0;
 		position: relative;
 	}
 
 		.banner input, .banner select, .banner textarea {
-			color: #2dd9d0;
+			color: #465902;
 		}
 
 		.banner a {
-			color: #2dd9d0;
+			color: #465902;
 		}
 
 		.banner strong, .banner b {
-			color: #2dd9d0;
+			color: #465902;
 		}
 
 		.banner h1, .banner h2, .banner h3, .banner h4, .banner h5, .banner h6 {
-			color: #2dd9d0;
+			color: #465902;
 		}
 
 		.banner blockquote {
@@ -4311,3 +4311,5 @@
 			}
 
 		}
+
+
