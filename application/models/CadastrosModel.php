@@ -22,16 +22,25 @@ class CadastrosModel extends CI_Model {
     }
     public function VerificarCPF($cpf)
     {
-        $this->db->where('cpf'. $cpf);
+        $this->db->where('cpf', $cpf);
         $resultado = $this->db->get("Usuario")->row_array();
         return $resultado;
     }
 
     /* Cadastro de Produto*/
-    public function CadastrarProduto($dados)
+    public function CadastrarProduto($dados, $quantidade)
     {
-        return $this->db->insert('Produto', $dados);
+        $this->db->insert('Produto', $dados);
+        $this->db->where('nomeProduto', $dados['nomeProduto']);
+        $resultado = $this->db->get("Produto")->row_array();
+        $estoque = [
+            'codProduto' => $resultado['codProduto'],
+            'quantidade' => $quantidade
+        ];
+        return $this->db->insert('Estoque', $estoque);
     }
+
+    
     public function VerificarCodBarras($codBarras)
     {
         $this->db->where('codBarras', $codBarras);

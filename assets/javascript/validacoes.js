@@ -45,7 +45,7 @@ $(function(){
                       }).then((result) => {
                         if (result.value)
                          {
-                            window.location.replace("TelaRelatorioProdutos");
+                            window.location.replace('welcome/TelaRelatorioProduto');
                         }
                     })
                 }
@@ -190,7 +190,7 @@ $(function(){
             cache: false,
             contentType: false,
             success: function(data){
-                if(data == "ErroNomeProduto"){
+                if(data == "ErroNome"){
                     Swal.fire({
                         title: 'Erro ao preencher campos!',
                         text: 'Campo Nome do Produto vazio!',

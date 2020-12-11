@@ -11,6 +11,8 @@ class Login extends CI_Controller {
         $pass = $this->input->post("pass");
         //pass é o name do input da view
 
+        $this->load->model('LoginModel');
+
         if(empty($user)){
             echo "ErroUser";
             die();
@@ -19,9 +21,14 @@ class Login extends CI_Controller {
             echo "ErroPass";
             die();
         }
-        else{
+        $resultado = $this->LoginModel->LoginUsuario($user, $pass);
+        if(!empty($resultado)){
             echo "Sucesso";
-            exit();
+            die();
+        }
+        if(empty($resultado)){
+            echo "ErroLogin";
+            die();
         }
 
     }

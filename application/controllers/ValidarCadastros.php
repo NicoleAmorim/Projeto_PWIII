@@ -73,10 +73,6 @@ class ValidarCadastros extends CI_Controller {
             die();
         }
 
-        if(empty($dados['confSenha'])){
-            echo "ErroConfSenha";
-            die();
-        }
 
         if($confSenha != $dados['senha']){
             echo "ErroSenhaNaoConfere";
@@ -98,88 +94,64 @@ class ValidarCadastros extends CI_Controller {
 
     public function ValidarCadastroProduto()
 	{
-        $dados = [
-            'nomeProduto' => $this->input->post("nomeProduto"),
-            'nomeFornecedor' => $this->input->post("nomeFornecedor"),
-            'codBarras' => $this->input->post("codBarras"),
-            'codProduto' => $this->input->post("codProduto"),
-            'estoque' => $this->input->post("estoque"),
-            'quantidade' => $this->input->post("quantidade"),
-            'preco' => $this->input->post("preco"),
-            'descricao' => $this->input->post("descricao"),
-        ];
-        
-        //$this->load->library('session');
-        //$this->session->email = $dados['email'];
-        //$this->session->userName = $dados['userName'];
+            $dados = [
+                'nomeProduto' => $this->input->post("nomeProduto"),
+                'preco' => $this->input->post("preco"),
+                'descricao' => $this->input->post("descricao"),
+                'marca' => $this->input->post("marca"),
+            ];
+            $quantidade = $this->input->post("quantidade");
 
-        //echo"Sucesso";
-        //die();
-
-        $this->load->model('CadastrosModel');
-
-        //$nome = $this->input->post("nome");
-        //$email = $this->input->post("email");
-
-        if(empty($dados['nomeProduto'])){
-            echo "ErroNomeProduto";
-            die();
-        }
-        
-        if(empty($dados['nomeFornecedor'])){
-            echo "ErroNomeFornecedor";
-            die();
-        }
-
-        if(empty($dados['codBarras'])){
-            echo "ErroCodBarras";
-            die();
-        }
-
-        $resultado = $this->CadastrosModel->VerificarCodBarras($dados['codBarras']);
-
-        if($resultado != ""){
-            echo "ErroCodBarrasExiste";
-            die();
-        }
-
-        if(empty($dados['codProduto'])){
-            echo "ErroCodProduto";
-            die();
-        }
-
-        if(empty($dados['estoque'])){
-            echo "ErroEstoque";
-            die();
-        }
-
-        if(empty($dados['quantidade'])){
-            echo "ErroQuantidade";
-            die();
-        }
-
-        if(empty($dados['preco'])){
-            echo "ErroPreco";
-            die();
-        }
-
-        if(empty($dados['descricao'])){
-            echo "ErroDescricao";
-            die();
-        }
-
-        if($this->CadastrosModel->CadastrarProduto($dados)){
             //$this->load->library('session');
             //$this->session->email = $dados['email'];
-            echo "Sucesso";
-            die();
-        }
-        else{
-            echo "ErroCadastroProduto";
-            exit();
+            //$this->session->userName = $dados['userName'];
+    
+            //echo"Sucesso";
+            //die();
+    
+            $this->load->model('CadastrosModel');
+    
+            //$nome = $this->input->post("nome");
+            //$email = $this->input->post("email");
+    
+            if(empty($dados['nomeProduto'])){
+                echo "ErroNome";
+                die();
+            }
+            
+            if(empty($quantidade)){
+                echo "ErroQuantidade";
+                die();
+            }
+    
+            if(empty($dados['preco'])){
+                echo "ErroPreco";
+                die();
+            }
+    
+            if(empty($dados['descricao'])){
+                echo "ErroDescricao";
+                die();
+            }
+    
+            if(empty($dados['marca'])){
+                echo "ErroMarca";
+                die();
+            }
+    
+            if($this->CadastrosModel->CadastrarProduto($dados, $quantidade)){
+                //$this->load->library('session');
+                //$this->session->email = $dados['email'];
+                echo "Sucesso";
+                die();
+            }
+            else{
+                echo "ErroCadastro";
+                exit();
+            }
+            
         }
         
-    }
 
     public function ValidarCodAlterarProduto()
 	{

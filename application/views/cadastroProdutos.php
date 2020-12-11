@@ -68,20 +68,12 @@
                                     <input type="text" name="nomeProduto" id="nomeProduto" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="NameFornecedor" class="required">Nome do Fornecedor</label>
-                                    <input type="text" name="nomeFornecedor" id="nomeFornecedor" />
+                                    <label for="Preco" class="required">Preço Unitário</label>
+                                    <input type="text" name="preco" id="preco" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="CodBarras" class="required">Código de Barras</label>
-                                    <input type="text" name="codBarras" id="codBarras" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="CodProduto" class="required">Código do Produto</label>
-                                    <input type="text" name="codProduto" id="codProduto" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="Estoque" class="required">Estoque</label>
-                                    <input type="estoque" name="estoque" id="estoque" />
+                                    <label for="Descricao">Descrição</label>
+                                    <input type="text" name="descricao" id="descricao" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -101,14 +93,6 @@
                                 <div class="form-input">
                                     <label for="Quantidade" class="required">Quantidade</label>
                                     <input type="text" name="quantidade" id="quantidade" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="Preco" class="required">Preço Unitário</label>
-                                    <input type="text" name="preco" id="preco" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="Descricao">Descrição</label>
-                                    <input type="text" name="descricao" id="descricao" />
                                 </div>
                             </div>
                         </div>
