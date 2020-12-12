@@ -68,8 +68,12 @@
                                     <input type="text" name="nomeProduto" id="nomeProduto" />
                                 </div>
                                 <div class="form-input">
+                                    <label for="CodProduto" class="required">Código do Produto</label>
+                                    <input type="text" name="codProduto" id="codProduto" />
+                                </div>
+                                <div class="form-input">
                                     <label for="Preco" class="required">Preço Unitário</label>
-                                    <input type="text" name="preco" id="preco" />
+                                    <input type="text" name="preco" id="preco" placeholder="R$00,00"/>
                                 </div>
                                 <div class="form-input">
                                     <label for="Descricao">Descrição</label>

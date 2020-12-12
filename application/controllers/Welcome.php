@@ -34,9 +34,13 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('cadastroProdutos');
 	}
-	public function TelaRelatorioProduto()
+	public function TelaRelatorioProdutos()
 	{
 		$this->load->view('RelatorioProdutos');
+	}
+	public function TelaVendas()
+	{
+		$this->load->view('vendas');
 	}
 	public function TelaRelatorioVendas()
 	{

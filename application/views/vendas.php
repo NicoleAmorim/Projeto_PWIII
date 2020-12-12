@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camelô</title>
-	<link rel="stylesheet" href="<?php echo base_url('assets/css-custom/main.css');?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css-custom/main.css');?>" />
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/material-icon/css/material-design-iconic-font.min.css');?>">
     <style>
         body{
@@ -24,6 +24,18 @@
         .module_content h2{
             font-size: 30px;
         }
+        .border{
+            margin-top: 35px;
+        }
+        .border2{
+            margin-top: 40px;
+        }
+        .center{
+            display: inline-block;
+            position: relative;
+            margin-left: 250px;
+        }
+
     </style>
 </head>
 <body>
@@ -36,7 +48,7 @@
     <!-- Nav -->
 	<nav id="menu" style="background-color: #465902;">
 		<ul class="links">
-        <li><a href="<?php echo base_url('index.php/Welcome/index')?>">Sair</a></li>
+            <li><a href="<?php echo base_url('index.php/Welcome/index')?>">Sair</a></li>
             <li><a href="<?php echo base_url('index.php/Welcome/TelaPerfil')?>">Meu Perfil</a></li>
 			<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastro')?>">Cadastrar</a></li>
 			<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastroProdutos')?>">Cadastrar um novo Produto</a></li>
@@ -45,6 +57,7 @@
 			<li><a href="<?php echo base_url('index.php/Welcome/TelaCodAlterarProduto')?>">Alterar ou Excluir produto</a></li>
 		</ul>
     </nav>
+
     <!--Form Cadastro-->
     <link rel="stylesheet" href="<?php echo base_url('assets/css-custom/style2.css');?>" />
     <div class="main">
@@ -53,49 +66,50 @@
                 <div class="signup-img">
                     <img src="<?php echo base_url('assets/imagens/ft2.jpg');?>" alt="">
                     <div class="signup-img-content">
-                        <h2>Cadastrar</h2>
-                        <p>um novo funcionário</p>
+                        <h2>Vendas</h2>
+                        <p>Comprar um produto</p>
                     </div>
                 </div>
                 <div class="signup-form">
-                    <form class="register-form"action="<?php  echo base_url('index.php/ValidarCadastros/ValidarCadastro')?>" method="POST" id="cadastro">
-                    <center>    
-                        <br><br><br><br>
+                    <form class="register-form" action="" method="POST" id="cadastroProduto">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
-                                    <label for="Name" class="required">Nome Completo</label>
-                                    <input type="text" name="nome" id="nome" />
+                                    <label for="CodProduto" class="required">Código do Produto</label>
+                                    <input type="text" name="codProduto" id="codProduto" />
+                                    <img src="<?php echo base_url('assets/imagens/search2.png');?>"  alt="" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="Email" class="required">Email Válido</label>
-                                    <input type="text" name="email" id="email" placeholder="email@gmail.com"/>
+                                    <label for="Quantidade" class="required">Quantidade</label>
+                                    <input type="text" name="quantidade" id="quantidade" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="Senha" class="required">Senha</label>
-                                    <input type="password" name="senha" id="senha" placeholder="**********"/>
+                                    <label for="Preco" class="required">Preço Unitário</label>
+                                    <input type="text" name="preco" id="preco" placeholder="R$00,00"/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="CPF" >CPF (Opcional)</label>
+                                    <input type="text" name="CPF" id="CPF" placeholder="000.000.000.00"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                               <div class="form-input">
-                                    <label for="User" class="required">Nome de Usuário</label>
-                                    <input type="text" name="userName" id="userName" />
+                                <div class="form-input border">
+                                    <input class="submit my-2 my-sm-0" type="submit" value="Buscar" name="buscar" id="Buscar"/>
                                 </div>
-                                <div class="form-input">
-                                    <label for="Cpf" class="required">CPF</label>
-                                    <input type="text" name="cpf" id="cpf" placeholder="000.000.000.00"/>
+                                <div class="form-input border2">
+                                    <label for="dataVenda" class="required">Data da Venda</label>
+                                    <input type="text" name="dataVenda" id="dataVenda" placeholder="01/01/2020"/>
                                 </div>
-                                <div class="form-input">
-                                    <label for="ConfSenha" class="required">Confirmar Senha</label>
-                                    <input type="text" name="confSenha" id="confSenha" placeholder="**********"/>
+                                <div class="form-input border">
+                                    <label for="PrecoFinal">Preço Final</label>
+                                    <label for="ValorFinal">R$ 40,00</label>
+                                </div>
+                                <div class="form-input " style="margin-top: 70px;">
+                                    <input class="submit" type="submit" value="Concluir" name="concluir" id="Concluir" />
+                                    <input class="submit" type="submit" value="Limpar" name="limpar" id="Limpar" />
                                 </div>
                             </div>
                         </div>
-                        <br><br>
-                        <div>
-                            <input class="submit" type="submit" value="Cadastrar" name="cadastro" id="Cadastro"/>
-                        </div>
-                    </center>
                     </form>
                 </div>
             </div>
@@ -113,6 +127,7 @@
     <script src="<?php echo base_url('assets/node_modules/bootstrap/dist/js/bootstrap.js');?>"></script>
     <script src="<?php echo base_url('assets/node_modules/sweetalert2/dist/sweetalert2.all.js');?>"></script>
     <script src="<?php echo base_url('assets/javascript/validacoes.js');?>"></script>
+    <script src="<?php echo base_url('assets/jquery/jquery.min.js');?>"></script>
 
 </body>
 </html>

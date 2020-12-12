@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camelô</title>
-    <link href="<?php echo base_url('assets/css-padrao/css-padrao.css');?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('assets/css-custom/main.css');?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/material-icon/css/material-design-iconic-font.min.css');?>">
     <style>
-		body{
+        body{
             background-image: url(<?php echo base_url('assets/imagens/black2.jpg');?>);
             background-repeat: no-repeat;
             background-size: cover;
+        }
+        .border{
+            margin-top: 35px;
+        }
+        .borderLeft{
+            margin-left: 350px;
+        }
+        .center{
+            display: inline-block;
+            position: relative;
+            margin-left: 200px;
         }
         .module_top, .module_bottom{
             visibility: hidden;
@@ -24,107 +35,106 @@
         .module_content h2{
             font-size: 30px;
         }
+        .containerEstoque{
+            border-radius: 15px;
+            color: white;
+            cursor: pointer;
+            background-color: #465902;
+            opacity: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .imgEstoque{
+            padding: 10px;
+            border-radius: 15px;
+            width: 150px;
+            height: 150px;
+        }
+        .aligncard{
+            float: right;
+            text-align: right;
+        }
+        .textEstoque{
+            font-size: 18px;
+        }
+        .textEstoqueQuant{
+            font-size: 18px;
+        }
+        .CardEstoque:hover{
+            background-color: #465902;
+        }
+        .CardEstoque{
+            cursor: pointer;
+            border-radius: 15px;
+        }
+
     </style>
 </head>
 <body>
-    	<!-- Header -->
-           <header id="header" class="alt">
-				<div class="logo"><a href="<?php echo base_url('index.php/Welcome/index')?>">Camelô</a></div>
-				<a href="#menu">Menu</a>
-			</header>
-
-        <!-- Nav -->
-			<nav id="menu" style="background-color: #465902;">
-				<ul class="links">
-                    <li><a href="<?php echo base_url('index.php/Welcome/index')?>">Sair</a></li>
-                    <li><a href="<?php echo base_url('index.php/Welcome/TelaPerfil')?>">Meu Perfil</a></li>
-					<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastro')?>">Cadastrar</a></li>
-					<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastroProdutos')?>">Cadastrar um novo Produto</a></li>
-					<li><a href="<?php echo base_url('index.php/Welcome/TelaRelatorioProdutos')?>">Relatório de Produtos</a></li>
-					<li><a href="<?php echo base_url('index.php/Welcome/TelaRelatorioVendas')?>">Relatório de Vendas</a></li>
-					<li><a href="<?php echo base_url('index.php/Welcome/TelaCodAlterarProduto')?>">Alterar ou Excluir produto</a></li>
-				</ul>
-			</nav>
-
-		<!-- Banner -->
-			<section class="banner full">
-				<article>
-					<img class='card-img-top' src="<?php echo base_url('assets/imagens/acessorios.jpg');?>" alt="" />
-					<div class="inner">
-						<header>
-							<p>Nós estamos aqui para te proporcinar novos itens maravilhosos do Paraguai</p>
-							<h2>Camelô</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="<?php echo base_url('assets/imagens/acessorios2.jpg');?>" alt="" />
-					<div class="inner">
-						<header>
-							<p>Nós estamos aqui para te proporcinar novos itens maravilhosos do Paraguai</p>
-							<h2>Camelô</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="<?php echo base_url('assets/imagens/acessorios3.jpg');?>"  alt="" />
-					<div class="inner">
-						<header>
-							<p>Nós estamos aqui para te proporcinar novos itens maravilhosos do Paraguai</p>
-							<h2>Camelô</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="<?php echo base_url('assets/imagens/acessorios4.jpg');?>"  alt="" />
-					<div class="inner">
-						<header>
-							<p>Nós estamos aqui para te proporcinar novos itens maravilhosos do Paraguai</p>
-							<h2>Camelô</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="<?php echo base_url('assets/imagens/acessorios5.jpg');?>" alt="" />
-					<div class="inner">
-						<header>
-							<p>Nós estamos aqui para te proporcinar novos itens maravilhosos do Paraguai</p>
-							<h2>Camelô</h2>
-						</header>
-					</div>
-				</article>
-			</section>
-			<br><br>
-	<header>
-		<center><h2 style="color:blanchedalmond;">Relatório de Produtos</h2></center>
+    <!-- Header -->
+    <header id="header" class="alt">
+		<div class="logo"><a href="<?php echo base_url('index.php/Welcome/index')?>">Camelô</a></div>
+		<a href="#menu">Menu</a>
 	</header>
 
-	<!--Cards-->
-	<div class='container my-5'> 
-        <div class='row mb-5'> 
-        	<!--Card 1-->
-            <div class='col-lg-3 col-sm-6'>
-                <div class='card h-100'> 
-                    <img class='card-img-top' src="<?php echo base_url('assets/imagens/cap.jpg');?>"> 
-                    <div class='card-body'> 
-                        <h4 class='card-title text-center mb-2'>nome</h4>
-                        <br>
-                        <h6 class='card-subtitle text-justify'>descricao 
-                            <br>
-                            <br>
-                        </h6>
-                        <br>
+    <!-- Nav -->
+	<nav id="menu" style="background-color: #465902;">
+		<ul class="links">
+            <li><a href="<?php echo base_url('index.php/Welcome/index')?>">Sair</a></li>
+            <li><a href="<?php echo base_url('index.php/Welcome/TelaPerfil')?>">Meu Perfil</a></li>
+			<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastro')?>">Cadastrar</a></li>
+			<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastroProdutos')?>">Cadastrar um novo Produto</a></li>
+            <li><a href="<?php echo base_url('index.php/Welcome/TelaRelatorioProdutos')?>">Relatório de Produtos</a></li>	
+            <li><a href="<?php echo base_url('index.php/Welcome/TelaRelatorioVendas')?>">Relatório de Vendas</a></li>
+			<li><a href="<?php echo base_url('index.php/Welcome/TelaCodAlterarProduto')?>">Alterar ou Excluir produto</a></li>
+		</ul>
+    </nav>
+
+    <!--Form Cadastro-->
+    <link rel="stylesheet" href="<?php echo base_url('assets/css-custom/style2.css');?>" />
+    <div class="main">
+    <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="<?php echo base_url('assets/imagens/ft2.jpg');?>" alt="">
+                    <div class="signup-img-content">
+                        <h2>Cadastrar</h2>
+                        <p>um novo produto</p>
                     </div>
-                    <div class='card-footer bg-white border-0'> 
-                        <form action='add_item.php' method='POST'> 
-                            <button class='btn btn-block card-link' style="background-color: #465902;"> 
-                                <label class='mr-3 mt-2' style="color: black;">preco R$ </label>
-                                <img src="<?php echo base_url('assets/imagens/carrinho_p.png');?>"  alt='Carrinho de compras'>  
-                            </button>
-                        </form>
-                    </div>     
+                </div>
+                <div class="signup-form">
+                    <form class="register-form row g-2 center" action="" method="POST" id="relatorioVendas">
+                        <div class="col-auto">
+                            <label for="Nome Produto">Nome do Produto</label>
+                            <input class="form-control mr-sm-2" type="text" name="nomeProduto" id="nomeProduto" placeholder="Acessorios"/>
+                        </div>
+                        <div class="col-auto border">
+                            <input class="submit my-2 my-sm-0" type="submit" value="Buscar" name="buscar" id="Buscar"/>
+                        </div>
+                    </form>
+                <div class="row col-12 max-heigh mb-4 containerEstoque ml-auto mr-auto mt-4">
+                    <div class="row col-12 CardEstoque">
+                        <img class="imgEstoque" src="<?php echo base_url('assets/imagens/acessorios.jpg');?>">
+                        <div class="col-4">
+                            <p class="mt-2 textEstoque">Nome: </p>
+                            <p class="mt-2 textEstoque">Código do produto: </p>
+                            <p class="mt-2 textEstoque">Descrição:</p>
+                            <p class="mt-4 align-bottom textEstoque">Preço:</p>
+                            <p class="mt-1 textEstoque">Estoque: </p>
+                        </div>                  
+                        <div class="col-5 aligncard borderLeft">
+                            <p class="mt-4 align-bottom textEstoque">Acessorios</p>
+                            <p class="mt-4 align-bottom textEstoque"> 400</p>
+                            <p class="mt-4 align-bottom textEstoque">Acessorios diversos</p>
+                            <p class="mt-4 align-bottom textEstoque">R$80</p>
+                            <p class="mt-4 align-bottom textEstoqueQuant"> 20</p>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
+        </div>
     </div>
     
 
@@ -138,5 +148,7 @@
     <script src="<?php echo base_url('assets/node_modules/bootstrap/dist/js/bootstrap.js');?>"></script>
     <script src="<?php echo base_url('assets/node_modules/sweetalert2/dist/sweetalert2.all.js');?>"></script>
     <script src="<?php echo base_url('assets/javascript/validacoes.js');?>"></script>
+    <script src="<?php echo base_url('assets/jquery/jquery.min.js');?>"></script>
+
 </body>
 </html>
