@@ -26,7 +26,6 @@
 	body {
 		line-height: 1;
 	}
-
 	ol, ul {
 		list-style: none;
 	}
@@ -1782,7 +1781,7 @@
 	}
 
 	a {
-		color: #8a4680;
+		color: white;
 	}
 
 	strong, b {

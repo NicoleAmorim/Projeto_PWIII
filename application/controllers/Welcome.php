@@ -22,10 +22,6 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('login');
 	}
-	public function TelaPerfil()
-	{
-		$this->load->view('perfil');
-	}
 	public function TelaCadastro()
 	{
 		$this->load->view('cadastro');

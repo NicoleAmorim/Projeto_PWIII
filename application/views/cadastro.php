@@ -24,27 +24,25 @@
         .module_content h2{
             font-size: 30px;
         }
+        .margin{
+            margin-left: 130px;
+        }
+        
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header id="header" class="alt">
-		<div class="logo"><a href="<?php echo base_url('index.php/Welcome/index')?>">Camelô</a></div>
-		<a href="#menu">Menu</a>
-	</header>
+    <header id="header" class="alt" >
+		<div class="logo"><a  href="<?php echo base_url('index.php/Welcome/index')?>">Camelô</a></div>
+		<a class="nav-link margin" href="<?php echo base_url('index.php/Welcome/TelaCadastro')?>">Cadastrar</a>
+		<a class="nav-link margin" href="<?php echo base_url('index.php/Welcome/TelaCadastroProdutos')?>">Cadastrar um novo Produto</a>
+        <a class="nav-link margin" href="<?php echo base_url('index.php/Welcome/TelaRelatorioProdutos')?>">Relatório de Produtos</a>	
+        <a class="nav-link margin" href="<?php echo base_url('index.php/Welcome/TelaRelatorioVendas')?>">Relatório de Vendas</a>
+        <a class="nav-link margin" href="<?php echo base_url('index.php/Welcome/TelaCodAlterarProduto')?>">Alterar ou Excluir produto</a>
+        <a class="nav-link margin" href="<?php echo base_url('index.php/Welcome/index')?>">Sair</a>
+    </header>
+    <br><br> 
 
-    <!-- Nav -->
-	<nav id="menu" style="background-color: #465902;">
-		<ul class="links">
-        <li><a href="<?php echo base_url('index.php/Welcome/index')?>">Sair</a></li>
-            <li><a href="<?php echo base_url('index.php/Welcome/TelaPerfil')?>">Meu Perfil</a></li>
-			<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastro')?>">Cadastrar</a></li>
-			<li><a href="<?php echo base_url('index.php/Welcome/TelaCadastroProdutos')?>">Cadastrar um novo Produto</a></li>
-            <li><a href="<?php echo base_url('index.php/Welcome/TelaRelatorioProdutos')?>">Relatório de Produtos</a></li>	
-            <li><a href="<?php echo base_url('index.php/Welcome/TelaRelatorioVendas')?>">Relatório de Vendas</a></li>
-			<li><a href="<?php echo base_url('index.php/Welcome/TelaCodAlterarProduto')?>">Alterar ou Excluir produto</a></li>
-		</ul>
-    </nav>
     <!--Form Cadastro-->
     <link rel="stylesheet" href="<?php echo base_url('assets/css-custom/style2.css');?>" />
     <div class="main">
