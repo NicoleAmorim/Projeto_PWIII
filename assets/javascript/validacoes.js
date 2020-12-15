@@ -45,7 +45,7 @@ $(function(){
                       }).then((result) => {
                         if (result.value)
                          {
-                            window.location.replace('welcome/TelaRelatorioProduto');
+                            window.location.replace('welcome/TelaRelatorioProdutos');
                         }
                     })
                 }

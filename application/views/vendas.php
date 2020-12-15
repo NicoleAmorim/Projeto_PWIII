@@ -71,38 +71,44 @@
                     </div>
                 </div>
                 <div class="signup-form">
-                    <form class="register-form" action="" method="POST" id="cadastroProduto">
+                    <form class="register-form" action="<?php  echo base_url('index.php/Selecionar/Seleciona')?>" method="POST" id="Produto">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
                                     <label for="CodProduto" class="required">Código do Produto</label>
-                                    <input type="text" name="codProduto" id="codProduto" />
+                                    <input type="text" name="codProduto" id="codProduto" <?php try{echo 'value="'.$codProduto.'"';}catch(Exception $e){}?>/>
                                     <img src="<?php echo base_url('assets/imagens/search2.png');?>"  alt="" />
+                                    <input class="submit" type="submit" value="buscar" name="buscar" id="buscar" />
                                 </div>
+                                </div>
+                                </div>
+                                </form>
+                                <form class="register-form" action="" method="POST" id="cadastroProduto">
+                                <div class="form-row">
+                                <div class="form-group">
                                 <div class="form-input">
                                     <label for="Quantidade" class="required">Quantidade</label>
                                     <input type="text" name="quantidade" id="quantidade" />
                                 </div>
-                                <div class="form-input">
-                                    <label for="Preco" class="required">Preço Unitário</label>
-                                    <input type="text" name="preco" id="preco" placeholder="R$00,00"/>
-                                </div>
+                                
                                 <div class="form-input">
                                     <label for="CPF" >CPF (Opcional)</label>
                                     <input type="text" name="CPF" id="CPF" placeholder="000.000.000.00"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-input border">
-                                    <input class="submit my-2 my-sm-0" type="submit" value="Buscar" name="buscar" id="Buscar"/>
                                 </div>
                                 <div class="form-input border2">
                                     <label for="dataVenda" class="required">Data da Venda</label>
                                     <input type="text" name="dataVenda" id="dataVenda" placeholder="01/01/2020"/>
                                 </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="form-input">
+                                    <label for="Preco" class="required">Preço Unitário</label>
+                                    <label for="Preco"><?php try{echo $preco;}catch(Exception $e){}?></label>
+                                </div>
                                 <div class="form-input border">
-                                    <label for="PrecoFinal">Preço Final</label>
-                                    <label for="ValorFinal">R$ 40,00</label>
+                                    <label for="PrecoFinal">Nome Produto</label>
+                                    <label for="ValorFinal"><?php try{echo $nomeProduto;}catch(Exception $e){}?></label>
                                 </div>
                                 <div class="form-input " style="margin-top: 70px;">
                                     <input class="submit" type="submit" value="Concluir" name="concluir" id="Concluir" />

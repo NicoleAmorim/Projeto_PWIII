@@ -113,31 +113,37 @@
                             <input class="submit my-2 my-sm-0" type="submit" value="Buscar" name="buscar" id="Buscar"/>
                         </div>
                     </form>
-                <div class="row col-12 max-heigh mb-4 containerEstoque ml-auto mr-auto mt-4">
-                    <div class="row col-12 CardEstoque">
-                        <img class="imgEstoque" src="<?php echo base_url('assets/imagens/acessorios.jpg');?>">
-                        <div class="col-4">
-                            <p class="mt-2 textEstoque">Nome: </p>
-                            <p class="mt-2 textEstoque">Código do produto: </p>
-                            <p class="mt-2 textEstoque">Descrição:</p>
-                            <p class="mt-4 align-bottom textEstoque">Preço:</p>
-                            <p class="mt-1 textEstoque">Estoque: </p>
-                        </div>                  
-                        <div class="col-5 aligncard borderLeft">
-                            <p class="mt-4 align-bottom textEstoque">Acessorios</p>
-                            <p class="mt-4 align-bottom textEstoque"> 400</p>
-                            <p class="mt-4 align-bottom textEstoque">Acessorios diversos</p>
-                            <p class="mt-4 align-bottom textEstoque">R$80</p>
-                            <p class="mt-4 align-bottom textEstoqueQuant"> 20</p>
-                        </div>
-                    </div>
-                </div>
+                    <?php
+                    for( $i = 1; $i <= $ultimo;)
+                    {
+                            echo '
+                            <div class="row col-12 max-heigh mb-4 containerEstoque ml-auto mr-auto mt-4">
+                                <div class="row col-12 CardEstoque">
+                                    <img class="imgEstoque" src="';echo base_url("assets/imagens/acessorios.jpg"); echo '">
+                                    <div class="col-4">
+                                        <p class="mt-2 textEstoque">Nome: </p>
+                                        <p class="mt-2 textEstoque">Código do produto: </p>
+                                        <p class="mt-2 textEstoque">Descrição:</p>
+                                        <p class="mt-4 align-bottom textEstoque">Preço:</p>
+                                        <p class="mt-1 textEstoque">Estoque: </p>
+                                    </div>                  
+                                    <div class="col-5 aligncard borderLeft">
+                                        <p class="mt-4 align-bottom textEstoque">'.$oi[$i]["nomeProduto"].'</p>
+                                        <p class="mt-4 align-bottom textEstoque">'.$oi[$i]["codProduto"].'</p>
+                                        <p class="mt-4 align-bottom textEstoque">'.$oi[$i]["descricao"].'</p>
+                                        <p class="mt-4 align-bottom textEstoque">'.$oi[$i]["preco"].'</p>
+                                        <p class="mt-4 align-bottom textEstoque">'.$oi[$i]["estoque"]["quantidade"].'</p>
+                                    </div>
+                                </div>
+                            </div>';
+                
+                $i++;
+                    }
+                ?>
                 </div>
             </div>
         </div>
     </div>
-    
-
     <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.js');?>"></script>
     <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.scrollex.min.js');?>"></script>
     <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.min.js');?>"></script>
