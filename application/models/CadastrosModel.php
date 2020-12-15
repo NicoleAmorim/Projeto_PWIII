@@ -48,6 +48,7 @@ class CadastrosModel extends CI_Model {
             'codProduto' => $resultado['codProduto'],
             'quantidade' => $resultado['quantidade'] - $quantidade
         ];
+        $this->db->where('codProduto', $dados['codProduto']);
         return $this->db->update('Estoque', $estoque);
     }
     
