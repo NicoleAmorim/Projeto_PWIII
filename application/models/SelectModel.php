@@ -13,7 +13,7 @@ public function SelecionarProduto($r)
           $r = $this->db->get('Estoque')->row_array();
           $q[$i]['estoque'] = $r;        
           $i++;
-        }     
+        }
         return $q;
 }
 public function SelecionarUltimoProduto()
@@ -21,6 +21,22 @@ public function SelecionarUltimoProduto()
         $this->db->select_max('codProduto');
         $query = $this->db->get('Produto')->row_array();
         return  $query['codProduto'];
+}
+public function SelecionarUltimoVenda()
+{
+        $this->db->select_max('codVenda');
+        $query = $this->db->get('Vendas')->row_array();
+        return  $query['codVenda'];
+}
+public function SelecionarVenda($r)
+{
+        for($i = 1;$i <= $r;) 
+        {
+          $this->db->where('codVenda', $i);
+          $q[$i] = $this->db->get('Vendas')->row_array();        
+          $i++;
+        }
+        return $q;
 }
 public function SelecionarProdutoByCod($cod)
 {

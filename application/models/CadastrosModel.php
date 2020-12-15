@@ -39,7 +39,17 @@ class CadastrosModel extends CI_Model {
         ];
         return $this->db->insert('Estoque', $estoque);
     }
-
+    public function CadastrarVenda($dados, $quantidade)
+    {
+        $this->db->insert('Vendas', $dados);
+        $this->db->where('codProduto', $dados['codProduto']);
+        $resultado = $this->db->get("Estoque")->row_array();
+        $estoque = [
+            'codProduto' => $resultado['codProduto'],
+            'quantidade' => $resultado['quantidade'] - $quantidade
+        ];
+        return $this->db->update('Estoque', $estoque);
+    }
     
     public function VerificarCodBarras($codBarras)
     {

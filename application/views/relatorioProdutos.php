@@ -73,6 +73,12 @@
         }
 
     </style>
+    <script type="text/javascript">
+            function Invest($cod)
+            {
+                window.location.replace('TelaVendas');
+            }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -111,10 +117,12 @@
                         </div>
                     </form>
                     <?php
+                    if(!empty($ultimo))
+                    {
                     for( $i = 1; $i <= $ultimo;)
                     {
                             echo '
-                            <div class="row col-12 max-heigh mb-4 containerEstoque ml-auto mr-auto mt-4">
+                            <div onclick=Invest('.$oi[$i]["codProduto"].'); class="row col-12 max-heigh mb-4 containerEstoque ml-auto mr-auto mt-4">
                                 <div class="row col-12 CardEstoque">
                                     <img class="imgEstoque" src="';echo base_url("assets/imagens/acessorios.jpg"); echo '">
                                     <div class="col-4">
@@ -136,6 +144,7 @@
                 
                 $i++;
                     }
+                }
                 ?>
                 </div>
             </div>

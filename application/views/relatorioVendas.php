@@ -110,9 +110,16 @@
                             <input class="submit my-2 my-sm-0" type="submit" value="Buscar" name="buscar" id="Buscar"/>
                         </div>
                     </form>
+
+                    <?php
+                    if(!empty($ultimo))
+                    {
+                    for( $i = 1; $i <= $ultimo;)
+                    {
+                echo '
                 <div class="row col-12 max-heigh mb-4 containerEstoque ml-auto mr-auto mt-4">
                     <div class="row col-12 CardEstoque">
-                        <img class="imgEstoque" src="<?php echo base_url('assets/imagens/cap.jpg');?>">
+                        <img class="imgEstoque" src="';echo base_url('assets/imagens/cap.jpg'); echo'">
                         <div class="col-4">
                             <p class="mt-2 textEstoque">Nome: </p>
                             <p class="mt-2 textEstoque">Código do produto: </p>
@@ -121,14 +128,18 @@
                             <p class="mt-1 textEstoque">Data da Venda</p>
                         </div>                  
                         <div class="col-5 aligncard borderLeft">
-                            <p class="mt-4 align-bottom textEstoque">Chapéu</p>
-                            <p class="mt-4 align-bottom textEstoque"> 098</p>
-                            <p class="mt-4 align-bottom textEstoque">R$20</p>
-                            <p class="mt-4 align-bottom textEstoque">R$40</p>
-                            <p class="mt-4 align-bottom textEstoqueQuant"> 30/10/2020</p>
+                            <p class="mt-4 align-bottom textEstoque">?</p>
+                            <p class="mt-4 align-bottom textEstoque">'.$oi[$i]['codProduto'].'</p>
+                            <p class="mt-4 align-bottom textEstoque">'.$oi[$i]['precoUni'].'</p>
+                            <p class="mt-4 align-bottom textEstoque">'.$oi[$i]['precoFinal'].'</p>
+                            <p class="mt-4 align-bottom textEstoqueQuant">'.$oi[$i]['dataVenda'].'</p>
                         </div>
                     </div>
-                </div>
+                </div>';
+                $i++;
+                    }
+                }
+                ?>
                 </div>
             </div>
         </div>

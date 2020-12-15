@@ -79,9 +79,13 @@
                                 </div>
                                 </div>
                                 </form>
-                                <form class="register-form" action="" method="POST" id="cadastroProduto">
+                                <form class="register-form" action="<?php  echo base_url('index.php/Vendas/Seleciona')?>" method="POST" id="cadastroProduto">
                                 <div class="form-row">
                                 <div class="form-group">
+                                <div class="form-input">
+                                    <label for="Cod" class="required">Codigo</label>
+                                    <input type="text" name="codigo" id="codigo" <?php try{echo 'value="'.$codProduto.'"';}catch(Exception $e){}?>/>
+                                </div>
                                 <div class="form-input">
                                     <label for="Quantidade" class="required">Quantidade</label>
                                     <input type="text" name="quantidade" id="quantidade" />
@@ -100,7 +104,7 @@
 
                                 <div class="form-input">
                                     <label for="Preco" class="required">Preço Unitário</label>
-                                    <label for="Preco"><?php try{echo $preco;}catch(Exception $e){}?></label>
+                                    <label for="Preco" name="preco" id="preco"><?php try{echo $preco;}catch(Exception $e){}?></label>
                                 </div>
                                 <div class="form-input border">
                                     <label for="PrecoFinal">Nome Produto</label>
@@ -119,17 +123,6 @@
     </div>
     
 
-    <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.js');?>"></script>
-    <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.scrollex.min.js');?>"></script>
-    <script src="<?php echo base_url('assets/node_modules/jquery/dist/jquery.min.js');?>"></script>
-    <script src="<?php echo base_url('assets/node_modules/jquery/dist/skel.min.js');?>"></script>
-    <script src="<?php echo base_url('assets/node_modules/jquery/dist/util.js');?>"></script>
-    <script src="<?php echo base_url('assets/node_modules/jquery/dist/main.js');?>"></script>
-    <script src="<?php echo base_url('assets/node_modules/popper.js/dist/umd/popper.js');?>"></script>
-    <script src="<?php echo base_url('assets/node_modules/bootstrap/dist/js/bootstrap.js');?>"></script>
-    <script src="<?php echo base_url('assets/node_modules/sweetalert2/dist/sweetalert2.all.js');?>"></script>
-    <script src="<?php echo base_url('assets/javascript/validacoes.js');?>"></script>
-    <script src="<?php echo base_url('assets/jquery/jquery.min.js');?>"></script>
 
 </body>
 </html>

@@ -45,7 +45,10 @@ class Welcome extends CI_Controller {
 	}
 	public function TelaRelatorioVendas()
 	{
-		$this->load->view('relatorioVendas');
+		$this->load->model('SelectModel');
+		$i['ultimo'] = $this->SelectModel->SelecionarUltimoVenda();
+		$i['oi'] = $this->SelectModel->SelecionarVenda($i['ultimo']);
+		$this->load->view('relatorioVendas', $i);
 	}
 	public function TelaCodAlterarProduto()
 	{
